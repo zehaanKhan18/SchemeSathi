@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4c2a85" />
+    <title>SchemeSathi — Find the right scheme</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#home" aria-label="SchemeSathi home">
+          <span class="brand-mark">S</span>
+          <span>Scheme<span>Sathi</span></span>
+        </a>
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
+          <button class="nav-item" data-view="schemes"><span>✦</span> My schemes</button>
+          <button class="nav-item" data-view="applications"><span>▣</span> Applications</button>
+          <button class="nav-item" data-view="updates"><span>◌</span> Updates</button>
+          <button class="nav-item" data-view="profile"><span>♙</span> My profile</button>
+        </nav>
+        <div class="help-card">
+          <span class="help-icon">?</span>
+          <div><strong>Need help?</strong><br />Talk to a scheme guide</div>
+          <button id="helpButton">Get support</button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+          <div class="location">📍 <span id="locationLabel">India</span></div>
+          <div class="top-actions">
+            <button class="language-button" id="languageButton" aria-label="Change language">अ <span>English</span></button>
+            <button class="bell" id="notificationButton" aria-label="View notifications">♟<i></i></button>
+            <button class="avatar" data-view="profile" aria-label="Open profile">AS</button>
+          </div>
+        </header>
+
+        <section class="view active" id="homeView">
+          <div class="hero">
+            <div>
+              <p class="eyebrow">YOUR ENTREPRENEURSHIP PARTNER</p>
+              <h1>Find the right support<br />for your <em>business dream.</em></h1>
+              <p>Answer a few simple questions and discover government schemes made for you.</p>
+              <button class="primary-button" id="startMatching">Find my schemes <span>→</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="sun"></div>
+              <div class="arch arch-one"></div>
+              <div class="arch arch-two"></div>
+              <div class="business-person"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="bag">₹</span></div>
+              <div class="speech-bubble">Your next step<br /><b>starts here</b> ✦</div>
+              <div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+            </div>
+          </div>
+
+          <section class="steps-section">
+            <div class="section-heading">
+              <div><p class="eyebrow">SIMPLE, PERSONAL, FREE</p><h2>How SchemeSathi works</h2></div>
+              <span>Just 3 easy steps</span>
+            </div>
+            <div class="steps-grid">
+              <article class="step-card"><span class="step-number">01</span><div class="step-icon purple">♙</div><h3>Tell us about you</h3><p>Share a few details about yourself and your business idea.</p></article>
+              <article class="step-card"><span class="step-number">02</span><div class="step-icon orange">✦</div><h3>Get matched</h3><p>Our smart matcher finds schemes that suit your profile.</p></article>
+              <article class="step-card"><span class="step-number">03</span><div class="step-icon green">✓</div><h3>Apply with confidence</h3><p>Use clear checklists and guidance at every step.</p></article>
+            </div>
+          </section>
+
+          <section class="impact-strip">
+            <div><span>₹</span><strong>Financial inclusion</strong><small>Support for every dream</small></div>
+            <div><span>↗</span><strong>Business growth</strong><small>Turn ideas into action</small></div>
+            <div><span>♟</span><strong>Inclusive opportunity</strong><small>Built for all entrepreneurs</small></div>
+          </section>
+        </section>
+
+        <section class="view" id="schemesView">
+          <div class="page-heading"><div><p class="eyebrow">PERSONALIZED FOR YOU</p><h1>Your scheme matches</h1><p id="schemeSubtitle">Complete your profile to see your best opportunities.</p></div><button class="outline-button" id="editProfile">Edit profile</button></div>
+          <div class="match-summary" id="matchSummary"><div class="match-orb">✦</div><div><strong>Let’s find your opportunities</strong><p>Your profile will help us check eligibility across government schemes.</p></div><button class="primary-button compact" id="completeProfile">Complete profile</button></div>
+          <div class="scheme-list" id="schemeList"></div>
+        </section>
+
+        <section class="view" id="applicationsView">
+          <div class="page-heading"><div><p class="eyebrow">KEEP MOVING FORWARD</p><h1>My applications</h1><p>Everything you need, in one place.</p></div><button class="primary-button compact" id="browseSchemes">Browse schemes</button></div>
+          <div class="application-layout">
+            <div id="applicationContent"></div>
+            <aside class="tip-card"><span>💡</span><h3>Small step, big dream</h3><p>Keep your Aadhaar and bank details ready to complete most applications faster.</p></aside>
+          </div>
+        </section>
+
+        <section class="view" id="updatesView">
+          <div class="page-heading"><div><p class="eyebrow">STAY INFORMED</p><h1>Updates for you</h1><p>Important news about your matches and applications.</p></div></div>
+          <div class="update-list">
+            <article class="update-item unread"><span class="update-symbol purple">✦</span><div><h3>Your scheme matches are ready</h3><p>We found programmes that may fit your business profile.</p><small>Today · 10:42 AM</small></div><button class="text-button" data-view="schemes">View matches</button></article>
+            <article class="update-item"><span class="update-symbol orange">!</span><div><h3>Complete your MUDRA application</h3><p>Three quick details are still needed before you can submit.</p><small>Yesterday · 4:15 PM</small></div><button class="text-button" data-apply="Mudra Yojana">Continue</button></article>
+            <article class="update-item"><span class="update-symbol green">✓</span><div><h3>New women entrepreneur support added</h3><p>Stand-Up India lending information is now available in SchemeSathi.</p><small>20 Aug 2026</small></div><button class="text-button" data-view="schemes">Explore</button></article>
+          </div>
+        </section>
+
+        <section class="view" id="profileView">
+          <div class="page-heading"><div><p class="eyebrow">YOUR DETAILS, YOUR CONTROL</p><h1>My profile</h1><p>Keep these details updated for accurate scheme matches.</p></div><button class="primary-button compact" id="profileEditButton">Edit details</button></div>
+          <div class="profile-grid" id="profileSummary"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="profileModal" aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+        <button class="close-button" data-close="profileModal" aria-label="Close">×</button>
+        <div class="modal-header"><span class="modal-badge">✦</span><div><p class="eyebrow">STEP <span id="stepIndicator">1</span> OF 3</p><h2 id="profileModalTitle">Let’s get to know you</h2><p id="stepDescription">These details help us find the right support.</p></div></div>
+        <form id="profileForm">
+          <div class="form-step active" data-step="1">
+            <label>What should we call you?<input name="name" placeholder="Your name" required /></label>
+            <label>Which state do you live in?<select name="state" required><option value="">Select your state</option><option>Uttar Pradesh</option><option>Maharashtra</option><option>Bihar</option><option>Rajasthan</option><option>Tamil Nadu</option><option>Other</option></select></label>
+            <div class="two-col"><label>Age<input name="age" type="number" min="18" max="100" placeholder="e.g. 28" required /></label><label>Gender<select name="gender" required><option value="">Select</option><option>Woman</option><option>Man</option><option>Non-binary</option><option>Prefer not to say</option></select></label></div>
+          </div>
+          <div class="form-step" data-step="2">
+            <p class="field-label">Which communities do you identify with? <small>Select all that apply</small></p>
+            <div class="chip-group"><label class="choice-chip"><input type="checkbox" name="category" value="SC" /> SC</label><label class="choice-chip"><input type="checkbox" name="category" value="ST" /> ST</label><label class="choice-chip"><input type="checkbox" name="category" value="OBC" /> OBC</label><label class="choice-chip"><input type="checkbox" name="category" value="Minority" /> Minority</label><label class="choice-chip"><input type="checkbox" name="category" value="General" /> General</label></div>
+            <p class="field-label">Where is your business based?</p>
+            <div class="radio-stack"><label><input type="radio" name="area" value="Rural" required /> <span><b>Rural area</b><small>Village or small town</small></span></label><label><input type="radio" name="area" value="Urban" /> <span><b>Urban area</b><small>Town or city</small></span></label></div>
+          </div>
+          <div class="form-step" data-step="3">
+            <label>What kind of business are you planning?<select name="business" required><option value="">Choose one</option><option>Retail / shop</option><option>Food and hospitality</option><option>Manufacturing</option><option>Handicraft / artisan work</option><option>Services</option><option>Agriculture / allied work</option></select></label>
+            <p class="field-label">Where are you in your journey?</p>
+            <div class="radio-stack"><label><input type="radio" name="stage" value="Starting a new business" required /> <span><b>Starting a new business</b><small>I have an idea and need support</small></span></label><label><input type="radio" name="stage" value="Growing an existing business" /> <span><b>Growing an existing business</b><small>I want to expand my work</small></span></label></div>
+            <label>How much funding do you need?<select name="funding" required><option value="">Select an amount</option><option value="50000">Up to ₹50,000</option><option value="500000">₹50,000 – ₹5 lakh</option><option value="1500000">₹5 lakh – ₹20 lakh</option><option value="5000000">Above ₹20 lakh</option></select></label>
+          </div>
+          <div class="modal-actions"><button class="outline-button" type="button" id="backButton" hidden>Back</button><button class="primary-button" type="button" id="nextButton">Continue <span>→</span></button></div>
+        </form>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="schemeModal" aria-hidden="true">
+      <section class="modal scheme-modal" role="dialog" aria-modal="true" aria-labelledby="schemeModalTitle">
+        <button class="close-button" data-close="schemeModal" aria-label="Close">×</button>
+        <div id="schemeModalContent"></div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
